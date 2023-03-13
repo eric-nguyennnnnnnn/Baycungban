@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./sass/styles.css">
+    <title>Flight list</title>
+</head>
+<body>
+    <header class="active">
+        <div class="headerIn active wide">
+            <div class="logo">
+                <h3>Baycungban</h3>
+                <div class="icon">
+                    <img src="./img/icon/vietnam.png" alt="">
+                </div>
+                <div class="icon">
+                    <img src="./img/icon/united-states.png" alt="">
+                </div>
+            </div>
+            <nav class="navMenu">
+                <ul>
+                    <li>Promotion</li>
+                    <li>Flight Schecdule</li>
+                    <li>About us</li>
+                    <li>Payment Guide</li>
+                </ul>
+            </nav>
+            <nav class="navMenuicon"><i class='bx bx-menu'></i></nav>
+            <div class="btn btnBook">Booking now</div>
+        </div>
+        <div class="headerTwo active">
+            <div class="headerTwo-in wide">
+                <div class="subHeader-items">
+                    <div class="subheaderBox">
+                        <div class="subHeader-item">
+                            <h4 class="subName">Da Nang (DAD)</h4>
+                            <span class="subDate">Fri, 22Mar, 2022</span>
+                        </div>
+                        <div class="subHeader-fame">
+                            <i class='bx bx-transfer'></i>
+                        </div>
+                        <div class="subHeader-item">
+                            <h4 class="subName">Ho Chi Minh (SGN)</h4>
+                            <span class="subDate">Fri, 22Mar, 2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="subHeader-items">
+                    <div class="midItem">Round-trip</div>
+                    <div class="midItem">|</div>
+                    <div class="midItem"><strong class="purple">02</strong> Adult, <strong class="purple">01
+                        </strong>Children</div>
+                    <div class="midItem">|</div>
+                    <div class="midItem">Business Class</div>
+                </div>
+                <div class="subHeader-items">
+                    <div class="btnChangeFlights"><span>Change Flights</span> <i class='bx bx-search'></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="menuRes">
+            <div class="menuResin">
+                <ul>
+                    <li>Promotion</li>
+                    <li>Flight Schedule</li>
+                    <li>About us</li>
+                    <li>Payment Guide</li>
+                </ul>
+                <div class="changeF"><span>Changes Flights</span> <i class='bx bx-search'></i></div>
+                <div class="btnX"><i class='bx bx-x'></i></div>
+            </div>
+        </div>
+    </header>   
+    <section class="main">
+        <div class="mainIn wide">
+            <div class="mainL">
+                <div class="mainFilter">
+                    <div class="filterTitle">
+                        <h4>Filter</h4>
+                    </div>
+                    <div class="dropdown">
+                        <select id="colorselector">
+                            <option value="red">Transit</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="colorselector">
+                            <option value="red">Time</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="colorselector">
+                            <option value="red">Airline</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="colorselector">
+                            <option value="red">Low Price</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mainCard">
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                <div class="names">Bamboo Airways</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <h4>21:40</h4>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <h4>21:40</h4>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <input type="radio" checked name="cardBot" id="detail">
+                        <input type="radio" name="cardBot" id="info">
+                        <div class="btnLine">
+                            <label for="detail">Flight Detail</label>
+                            <label for="info">Fare Info</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="cardBot">
+                            <div class="cardBotL">
+                                <div class="botL">
+                                    <div class="botLtop">
+                                        <h4>21:40</h4>
+                                        <span>11 Feb</span>
+                                    </div>
+                                    <div class="botLtop">1h 30m</div>
+                                    <div class="botLtop">
+                                        <h4>21:40</h4>
+                                        <span>11 Feb</span>
+                                    </div>
+                                </div>
+                                <div class="botM">
+                                    <div class="circleM"></div>
+                                    <div class="lineM"></div>
+                                    <div class="circleM"></div>
+                                </div>
+                                <div class="botR">
+                                    <div class="botR_text">
+                                        <h4>Da nang (DAD)</h4>
+                                        <span>Da Nang Airport</span>
+                                    </div>
+                                    <div class="botR_text">
+                                        <h4>Ho Chi Minh City (SGN)</h4>
+                                        <span>Tansonnhat Intl</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardBotR">
+                                <div class="logoBoxs">
+                                    <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                    <div class="logosTitle">
+                                        <h4>BAMBOO AIRWAYS</h4>
+                                        <span>QH-183 • Economy</span>
+                                    </div>
+                                </div>
+                                <div class="cardDetail">
+                                    <div class="cardDeL">
+                                        <span>Bagggage <span class="purple">20kg</span></span>
+                                        <br>
+                                        <span>In-flight <span class="purple">Meal</span></span>
+                                        <br>
+                                        <span>In-flight <span class="purple">Entertainment</span></span>
+                                    </div>
+                                    <div class="cardDeR">
+                                        <span>Aircraft <span class="purple">Airbus A321</span></span>
+                                        <br>
+                                        <span>Seat layout <span class="purple">3-3</span></span>
+                                        <br>
+                                        <span>Seat Pitch <span class="purple">29 inches (standard)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardBotInfo">
+                            <div class="cardBotL">
+                                <h4>Conditions</h4>
+                                <div class="logoBoxs">
+                                    <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                    <div class="logosTitle">
+                                        <h4>BAMBOO AIRWAYS</h4>
+                                        <span>QH-183 • Economy</span>
+                                    </div>
+                                </div>
+                                <div class="cardInfoLocateBox">
+                                    <div class="locateFr">
+                                        <span>Da Nang</span>
+                                        <span class="purple">Economy</span>
+                                    </div>
+                                    <div class="locateLine">
+                                        <div class="locateCir"></div>
+                                        <div class="locateLine"></div>
+                                        <div class="locateCir"></div>
+                                    </div>
+                                    <div class="locateTo"><span>Ho Chi Minh City</span></div>
+                                </div>
+                                <br>
+                                <span>Non - Refundable</span>
+                            </div>
+                            <div class="cardBotR">
+                                <h4>Price details</h4>
+                                <div class="cardBotDetail">
+                                    <div class="cardBotDetailL">
+                                        <span>Adult Basic Fare (x1)</span>
+                                        <br>
+                                        <span>Tax</span>
+                                        <br>
+                                        <span>Regular Total Price</span>
+                                        <br>
+                                        <span class="orange">Save</span>
+                                    </div>
+                                    <div class="cardBotDetailR">
+                                        <span>1,326,000 vnd</span>
+                                        <br>
+                                        <span>included</span>
+                                        <br>
+                                        <span>1,326,000 vnd</span>
+                                        <br>
+                                        <span>-4000 vnd</span>
+                                    </div>
+                                </div>
+                                <hr class="line">
+                                <div class="cardBotDetailTotal">
+                                    <span>You Pay</span>
+                                    <span class="orange">1,322,000 vnd</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                <div class="names">Bamboo Airways</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <input type="radio" name="cardBotinfo" id="details">
+                        <input type="radio" checked name="cardBotinfo" id="infos">
+                        <div class="btnLine">
+                            <label for="details">Flight Detail</label>
+                            <label for="infos">Fare Info</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="cardBot">
+                            <div class="cardBotL">
+                                <div class="botL">
+                                    <div class="botLtop">
+                                        <h4>21:40</h4>
+                                        <span>11 Feb</span>
+                                    </div>
+                                    <div class="botLtop">1h 30m</div>
+                                    <div class="botLtop">
+                                        <h4>21:40</h4>
+                                        <span>11 Feb</span>
+                                    </div>
+                                </div>
+                                <div class="botM">
+                                    <div class="circleM"></div>
+                                    <div class="lineM"></div>
+                                    <div class="circleM"></div>
+                                </div>
+                                <div class="botR">
+                                    <div class="botR_text">
+                                        <h4>Da nang (DAD)</h4>
+                                        <span>Da Nang Airport</span>
+                                    </div>
+                                    <div class="botR_text">
+                                        <h4>Ho Chi Minh City (SGN)</h4>
+                                        <span>Tansonnhat Intl</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardBotR">
+                                <div class="logoBoxs">
+                                    <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                    <div class="logosTitle">
+                                        <h4>BAMBOO AIRWAYS</h4>
+                                        <span>QH-183 • Economy</span>
+                                    </div>
+                                </div>
+                                <div class="cardDetail">
+                                    <div class="cardDeL">
+                                        <span>Bagggage <span class="purple">20kg</span></span>
+                                        <br>
+                                        <span>In-flight <span class="purple">Meal</span></span>
+                                        <br>
+                                        <span>In-flight <span class="purple">Entertainment</span></span>
+                                    </div>
+                                    <div class="cardDeR">
+                                        <span>Aircraft <span class="purple">Airbus A321</span></span>
+                                        <br>
+                                        <span>Seat layout <span class="purple">3-3</span></span>
+                                        <br>
+                                        <span>Seat Pitch <span class="purple">29 inches (standard)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardBotInfo">
+                            <div class="cardBotL">
+                                <h4>Conditions</h4>
+                                <div class="logoBoxs">
+                                    <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                    <div class="logosTitle">
+                                        <h4>BAMBOO AIRWAYS</h4>
+                                        <span>QH-183 • Economy</span>
+                                    </div>
+                                </div>
+                                <div class="cardInfoLocateBox">
+                                    <div class="locateFr">
+                                        <span>Da Nang</span>
+                                        <span class="purple">Economy</span>
+                                    </div>
+                                    <div class="locateLine">
+                                        <div class="locateCir"></div>
+                                        <div class="locateLine"></div>
+                                        <div class="locateCir"></div>
+                                    </div>
+                                    <div class="locateTo"><span>Ho Chi Minh City</span></div>
+                                </div>
+                                <br>
+                                <span>Non - Refundable</span>
+                            </div>
+                            <div class="cardBotR">
+                                <h4>Price details</h4>
+                                <div class="cardBotDetail">
+                                    <div class="cardBotDetailL">
+                                        <span>Adult Basic Fare (x1)</span>
+                                        <br>
+                                        <span>Tax</span>
+                                        <br>
+                                        <span>Regular Total Price</span>
+                                        <br>
+                                        <span class="orange">Save</span>
+                                    </div>
+                                    <div class="cardBotDetailR">
+                                        <span>1,326,000 vnd</span>
+                                        <br>
+                                        <span>included</span>
+                                        <br>
+                                        <span>1,326,000 vnd</span>
+                                        <br>
+                                        <span>-4000 vnd</span>
+                                    </div>
+                                </div>
+                                <hr class="line">
+                                <div class="cardBotDetailTotal">
+                                    <span>You Pay</span>
+                                    <span class="orange">1,322,000 vnd</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/vietnamAir.png" alt=""></div>
+                                <div class="names">Vietnam airlines</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem active">Flight Detail</label>
+                                <label for="info" class="btnLineItem">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                <div class="names">Bamboo Airways</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem ">Flight Detail</label>
+                                <label for="info" class="btnLineItem  active">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/vietnamAir.png" alt=""></div>
+                                <div class="names">Vietnam airlines</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem active">Flight Detail</label>
+                                <label for="info" class="btnLineItem">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                <div class="names">Bamboo Airways</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem ">Flight Detail</label>
+                                <label for="info" class="btnLineItem active">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/vietnamAir.png" alt=""></div>
+                                <div class="names">Vietnam airlines</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem active">Flight Detail</label>
+                                <label for="info" class="btnLineItem">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardItem">
+                        <div class="cardTop">
+                            <div class="cardBrand">
+                                <div class="logos"><img src="./img/icon/bamboo.png" alt=""></div>
+                                <div class="names">Bamboo Airways</div>
+                            </div>
+                            <div class="cardTime">
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                                <div class="timesAbout">
+                                    <div class="timesTop">1h 30m</div>
+                                    <div class="timesMid">
+                                        <div class="midCir"></div>
+                                        <div class="midLine"></div>
+                                        <div class="midCir"></div>
+                                    </div>
+                                    <div class="timesBot">Direct</div>
+                                </div>
+                                <div class="times">
+                                    <span>21:40</span>
+                                    <div class="timesUnder">DAD</div>
+                                </div>
+                            </div>
+                            <div class="cardWeight">
+                                <div class="weightTop">
+                                    <i class='bx bx-shopping-bag'></i><span>Baggage</span><span
+                                        class="purple">20kg</span>
+                                </div>
+                                <div class="weightTop">
+                                    <i class='bx bx-restaurant'></i><span>In-flight</span><span
+                                        class="purple">Meal</span>
+                                </div>
+                            </div>
+                            <div class="cardPrice">
+                                <span>1,326,000 vnd</span>
+                                <span class="orange">1,322,000 vnd</span>
+                            </div>
+                            <div class="cardAction">
+                                <div class="btnChoose">Choose</div>
+                            </div>
+                        </div>
+                        <div class="btnLine">
+                            <div class="btnLinein">
+                                <label for="detail" class="btnLineItem ">Flight Detail</label>
+                                <label for="info" class="btnLineItem active">Fare Info</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainR">
+                <div class="mainRItem">
+                    <div class="mainRtitle">
+                        <h3>Your Flights</h3>
+                    </div>
+                </div>
+                <div class="mainRItemM">
+                    <div class="ItemTop">
+                        <span>01</span>
+                        <div class="ItemInfo">
+                            <p>Fri, 11 Feb, 2022</p>
+                            <h4>Da Nang - Ho Chi Minh</h4>
+                        </div>
+                    </div>
+                    <div class="cardBrands">
+                        <div class="logobrand"><img src="./img/icon/bamboo.png" alt=""></div>
+                        <div class="ItemInfo">
+                            <h4>BAMBOO AIRWAYS</h4>
+                            <p class="purple dt">Details</p>
+                        </div>
+                    </div>
+                    <div class="cardTime">
+                        <div class="times">
+                            <span>21:40</span>
+                            <div class="timesUnder">DAD</div>
+                        </div>
+                        <div class="timesAbout">
+                            <div class="timesTop">1h 30m</div>
+                            <div class="timesMid">
+                                <div class="midCir"></div>
+                                <div class="midLine"></div>
+                                <div class="midCir"></div>
+                            </div>
+                            <div class="timesBot">Direct</div>
+                        </div>
+                        <div class="times">
+                            <span>21:40</span>
+                            <div class="timesUnder">DAD</div>
+                        </div>
+                    </div>
+                    <div class="changeDepart">
+                        <h4>Change departure flight</h4>
+                    </div>
+                </div>
+                <div class="lineArt"></div>
+                <div class="ItemBot">
+                    <span>02</span>
+                    <div class="ItemInfo">
+                        <p>Sun, 13 Feb, 2022</p>
+                        <h4>Ho Chi Minh - Da Nang</h4>
+                    </div>
+                </div>
+                <div class="mainRItemB">
+                    <span>Subtotal</span>
+                    <br>
+                    <span class="orange">
+                        <h4>1,322,000 vnd</h4>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact active">
+        <div class="contactCover wide">
+            <div class="contactBox">
+                <div class="contactLH">
+                    <i class='bx bxs-phone'></i><span> Call us: +84 908 02 02 58</span>
+                </div>
+                <div class="contactLH">
+                    <i class='bx bxs-envelope'></i><span><a href="mailto:chucinog@gmail.com">Email:
+                            chucinog@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="contactBox">
+                <span>Follow us</span><span class="contactLine"></span><i class='bx bxl-facebook'></i><i
+                    class='bx bxl-instagram'></i>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/handleList.js"></script>
+</body>
+</html>

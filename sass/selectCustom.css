@@ -1,0 +1,54 @@
+@font-face {
+  font-family: biennaleBolder;
+  src: url(../font/BiennaleBlack.otf);
+}
+
+@font-face {
+  font-family: biennaleMiddle;
+  src: url(../font/BiennaleRegular.otf);
+}
+
+@font-face {
+  font-family: biennale;
+  src: url(../font/BiennaleBook.otf);
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.dropdown select {
+  width: 100%;
+  margin: 0;
+  background: none;
+  border: 1px solid transparent;
+  outline: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  font-size: 14px;
+  padding: 5px 5px;
+  font-family: biennaleMiddle;
+}
+
+.dropdown select,
+label {
+  font-family: biennaleMiddle;
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 8px;
+  top: 50%;
+  right: 1em;
+  margin-top: -4px;
+  z-index: 2;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(77,70,250)' points='8,12 0,0 16,0'/%3E%3C/svg%3E") 0 0 no-repeat;
+  /* These hacks make the select behind the arrow clickable in some browsers */
+  pointer-events: none;
+}
+/*# sourceMappingURL=selectCustom.css.map */

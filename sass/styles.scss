@@ -1,0 +1,1832 @@
+@import "variables";
+@import "selectCustom";
+@font-face {
+    font-family: biennaleBolder;
+    src: url(../font/BiennaleBlack.otf);
+}
+@font-face {
+    font-family: biennaleMiddle;
+    src: url(../font/BiennaleRegular.otf);
+}
+@font-face {
+    font-family: biennale;
+    src: url(../font/BiennaleBook.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: biennale;
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: $secondWhite;
+    border-radius: 10px;
+    border: 2px solid $purple;
+}
+.wide {
+    max-width: 1230px;
+    margin: auto;
+}
+.btn {
+    border-radius: 12px;
+    padding: 5px;
+}
+.orange {
+    color: $orange;
+}
+.purple {
+    color: $purple !important;
+}
+.line {
+    opacity: 0.2;
+}
+@mixin flexAlign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    position: fixed;
+    width: 100%;
+    @include flexAlign();
+    flex-direction: column;
+    z-index: 10;
+    transition: 0.4s;
+    font-family: biennaleMiddle;
+    &.active {
+        background-color: $purple;
+    }
+    .headerIn {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        z-index: 2;
+        &.active {
+            .logo {
+                h3 {
+                    color: $white;
+                }
+            }
+            nav {
+                ul {
+                    li {
+                        position: relative;
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 100px;
+                            padding: 10px;
+                            position: absolute;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            opacity: 0;
+                        }
+                        &:hover::after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .navMenuicon {
+                color: $white;
+            }
+            .btnBook {
+                background-color: $white;
+                color: $purple;
+            }
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            h3 {
+                margin-right: 10px;
+                font-family: biennaleMiddle;
+            }
+            .icon {
+                height: 20px;
+                width: 20px;
+                position: relative;
+                margin-right: 10px;
+                border-radius: 50%;
+                box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.9);
+                &:nth-child(1) {
+                    border: 2px solid $purple;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    list-style: none;
+                    margin: 0 20px;
+                    cursor: pointer;
+                    font-family: biennaleMiddle;
+                }
+            }
+        }
+        
+        .navMenuicon {
+            cursor: pointer;
+            font-size: 50px;
+            transform: translateY(5px) translateX(-10px);
+        }
+        .btnBook {
+            font-size: 14px;
+            padding: 10px 20px;
+            background-color: $purple;
+            color: $white;
+            font-family: biennaleMiddle;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+                background-color: $orange;
+                color: $white;
+            }
+        }
+    }
+    .headerTwo {
+        width: 100%;
+        height: 80px;
+        background-color: transparent;
+        transform: translateY(-100%);
+        transition: 0.5s;
+        font-family: biennaleBolder;
+        opacity: 0;
+        .headerTwo-in {
+            height: 100%;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .subHeader-items {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .subheaderBox {
+                    display: flex;
+                    align-items: center;
+                    .subHeader-item {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .subName {
+                            font-size: 16px;
+                            color: $purple;
+                        }
+                        .subDate {
+                            font-size: 12px;
+                        }
+                    }
+                    .subHeader-fame {
+                        margin: 0 30px;
+                        i {
+                            font-size: 28px;
+                            color: $black;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+                .midItem {
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+                .btnChangeFlights {
+                    padding: 10px;
+                    color: $white;
+                    background-color: $orange;
+                    @include flexAlign();
+                    transition: 0.5s;
+                    cursor: pointer;
+                    span {
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        background-color: $purple;
+                    }
+                    &:hover > i {
+                        transform: scale(1.2);
+                    }
+                    i {
+                        font-size: 18px;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+        &.active {
+            background-color: $white;
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .menuRes {
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        transition: 0.5s;
+        transform: translateX(-100%);
+        z-index: 10;
+        .menuResin {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: $white;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            ul {
+                @include flexAlign();
+                flex-direction: column;
+                gap: 30px;
+                li {
+                    position: relative;
+                    list-style: none;
+                    text-align: center;
+                    transition: 0.5s;
+                    @include flexAlign();
+                    cursor: pointer;
+                    z-index: 2;
+                    font-size: 25px;
+                    &:hover::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        padding: 10px 20px;
+                        border-radius: 100px;
+                        background-color: rgba(0, 0, 0, 0.3);
+                        z-index: -1;
+                    }
+                    &:hover {
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+            .changeF {
+                padding: 10px 20px;
+                color: $white;
+                cursor: pointer;
+                background-color: $orange;
+                border-radius: 12px;
+                @include flexAlign();
+                span {
+                    margin-right: 10px;
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            .btnX {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $purple;
+                color: $white;
+                @include flexAlign();
+                cursor: pointer;
+                i {
+                    transition: 0.5s;
+                    font-size: 20px;
+                }
+                &:hover > i {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        &.active {
+            transform: translateX(0%);
+        }
+    }
+}
+section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.hero {
+    width: 100%;
+    height: calc(982px);
+    overflow: hidden;
+    img {
+        top: -650px;
+        position: absolute;
+        width: 100%;
+        transition: 0.5s;
+    }
+    .heroChild {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        .heroText {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            left: 0;
+            span {
+                font-size: 72px;
+                margin-right: auto;
+                strong {
+                    color: $purple;
+                }
+            }
+        }
+    }
+}
+.schedules {
+    .scheduleCover {
+        width: 100%;
+        position: relative;
+        .schedule {
+            position: absolute;
+            width: 100%;
+            border-radius: 12px;
+            background-color: $white;
+            bottom: -60px;
+            padding: 35px 20px;
+            box-shadow: 0px 0px 30px rgba($color: $purple, $alpha: 0.1), 0px 0px 5px rgba($color: $purple, $alpha: 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 5;
+            .btnSearch {
+                padding: 12px 20px;
+                width: 245px;
+                color: $white;
+                font-size: 18px;
+                background-color: $purple;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: absolute;
+                z-index: 6;
+                right: 20px;
+                bottom: -25px;
+                text-decoration: none;
+                cursor: pointer;
+                transition: 0.5s;
+                img {
+                    transition: 0.5s;
+                    position: absolute;
+                    right: 20px;
+                }
+                &:hover {
+                    background-color: $orange;
+                }
+                &:hover > img {
+                    transform: translateX(-20px);
+                }
+            }
+            input[type="radio"] {
+                display: none;
+            }
+            #oneway:checked ~ .schedulePicker {
+                label {
+                    .oneway {
+                        background-color: $purple;
+                        .circleIn {
+                            background-color: $secondWhite;
+                        }
+                    }
+                }
+            }
+            #multy :checked ~ .scheduleLocate {
+                .return {
+                    display: none;
+                }
+            }
+            #multy:checked ~ .schedulePicker {
+                label {
+                    .multy {
+                        background-color: $purple;
+                        .circleIn {
+                            background-color: $secondWhite;
+                        }
+                    }
+                }
+            }
+            .schedulePicker {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+                label {
+                    display: flex;
+                    align-items: center;
+                    .scheduleCircle {
+                        margin-right: 5px;
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 50%;
+                        background-color: $secondWhite;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .circleIn {
+                            width: 14px;
+                            height: 14px;
+                            border-radius: 50%;
+                        }
+                    }
+                    span {
+                        margin-right: 30px;
+                    }
+                }
+                select {
+                    margin-right: 30px;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .scheduleLocate {
+                .scheduleLocate-item {
+                    position: relative;
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    .listTP,
+                    .listTP2 {
+                        position: absolute;
+                        z-index: 7;
+                        width: calc(50% - 10px);
+                        bottom: -300px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        background-color: $white;
+                        border-radius: 12px;
+                        display: flex;
+                        overflow: hidden;
+                        flex-direction: column;
+                        gap: 5px;
+                        transition: 0.5s;
+                        visibility:hidden;
+                        transform: translateY(0px);
+                        span {
+                            padding: 10px;
+                            width: 100%;
+                            cursor: pointer;
+                            transition: 0.2s;
+                            &:hover {
+                                background-color: $purple;
+                                color: $white;
+                            }
+                            h4 {
+                                font-size: 14px;
+                            }
+                            p {
+                                font-size: 12px;
+                            }
+                        }
+                        &.active {
+                            visibility:visible;
+                            transform: translateY(10px);
+                        }
+                    }
+                    
+                    .locateText {
+                        cursor: pointer;
+                        &:nth-child(1) {
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            color: $black;
+                            opacity: 0.5;
+                            font-weight: 600;
+                        }
+                        &:nth-child(2) {
+                            font-size: 24px;
+                            color: $purple;
+                            font-family: biennaleBolder;
+                        }
+                        &:nth-child(3) {
+                            font-size: 14px;
+                            color: $black;
+                            font-family: biennaleBolder;
+                        }
+                        h4 {
+                            font-size: 24px;
+                            color: $purple;
+                            font-family: biennaleBolder;
+                        }
+                        p {
+                            font-size: 14px;
+                            font-family: biennaleBolder;
+                            color: $black;
+                        }
+                    }
+                    &:nth-child(1) {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+                        .locateCircle {
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $white;
+                            position: absolute;
+                            cursor: pointer;
+                            .locateCircleInside {
+                                padding: 2px;
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                                left: -5px;
+                                overflow: hidden;
+                                @include flexAlign();
+                                .cirBack {
+                                    position: absolute;
+                                    &:nth-child(1) {
+                                        width: 50%;
+                                        height: 100%;
+                                        left: -11px;
+                                        background-color: rgba(0, 0, 0, 0.1);
+                                    }
+                                    &:nth-child(2) {
+                                        width: 50%;
+                                        height: 100%;
+                                        background-color: $purple;
+                                        right: -9px;
+                                    }
+                                }
+                                .loCirIn {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                    background-color: $white;
+                                    @include flexAlign();
+                                    z-index: 5;
+                                }
+                            }
+                        }
+                        
+                    }
+                    &:nth-child(2) {
+                        padding: 15px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        grid-area: h2;
+                        flex-direction: row;
+                        .calendarL {
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            .datepicker {
+                                border: none;
+                                outline: none;
+                                font-size: 24px;
+                                color: $purple;
+                                font-family: biennaleBolder;
+                                padding-right: 50px;
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                text-transform: uppercase;
+                                &::-webkit-calendar-picker-indicator {
+                                    position: absolute;
+                                    background-image: url(../img/icon/calendar-31.svg);
+                                    height: 14px;
+                                    width: 14px;
+                                    right: 20%;
+                                    top: 27%;
+                                }
+                            }
+                            .calendarBtn {
+                                display: flex;
+                                span {
+                                    margin-right: 10px;
+                                    font-size: 14px;
+                                    color: $black;
+                                    text-transform: none;
+                                    font-family: biennaleBolder;
+                                    opacity: 0.4;
+                                    transition: 0.5s;
+                                    cursor: pointer;
+                                    &:hover {
+                                        opacity: 1;
+                                        border-bottom: 1px solid $black;
+                                        padding-bottom: 5px;
+                                    }
+                                    &.active {
+                                        opacity: 1;
+                                        border-bottom: 1px solid $black;
+                                        padding-bottom: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contact {
+    margin-top: 30px;
+    height: 200px;
+    position: relative;
+    background-color: $secondWhite;
+    &.active {
+        margin-top: 0;
+    }
+    .contactCover {
+        .contactBox {
+            i {
+                height: 18px;
+                width: 18px;
+                @include flexAlign();
+                font-size: 11px;
+                color: $white;
+                border-radius: 50%;
+                background-color: $purple;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            span {
+                margin-right: 20px;
+                font-size: 14px;
+                letter-spacing: 2px;
+                a {
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+            .contactLine {
+                height: 1px;
+                background-color: $black;
+                width: 40px;
+            }
+        }
+    }
+}
+.main {
+    width: 100%;
+    background-color: $secondWhite;
+    padding-top: 160px;
+    .mainIn {
+        .mainL {
+            .mainFilter {
+                width: 100%;
+                padding: 10px 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: center;
+                overflow: hidden;
+                .filterTitle {
+                    color: $black;
+                    opacity: 0.5;
+                    margin-left: auto;
+                    text-transform: uppercase;
+                }
+                .dropdown {
+                    width: 120px;
+                    padding: 7px 10px;
+                    background: $white;
+                    border-radius: 12px;
+                }
+            }
+            .mainCard {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .cardItem {
+                    padding: 20px;
+                    border-radius: 12px;
+                    background-color: $white;
+                    &:nth-child(3) {
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(4) {
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(5) {
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(6) {
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(7) {
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(8) {
+                        padding-bottom: 0;
+                    }
+                    .cardTop {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        margin-bottom: 30px;
+                        .cardBrand {
+                            display: flex;
+                            align-items: center;
+                            .logos {
+                                margin-right: 10px;
+                                height: 30px;
+                                width: 30px;
+                                padding: 3px;
+                                border-radius: 6px;
+                                border: 1px solid rgba(0, 0, 0, 0.1);
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                            .names {
+                                text-transform: uppercase;
+                                font-size: 14px;
+                            }
+                        }
+                        .cardTime {
+                            display: flex;
+                            gap: 10px;
+                            .times {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 10px;
+                                h4 {
+                                    font-size: 14px;
+                                }
+                                .timesUnder {
+                                    font-size: 10px;
+                                    background-color: $secondWhite;
+                                    border-radius: 100px;
+                                    padding: 5px;
+                                    @include flexAlign();
+                                }
+                            }
+                            .timesAbout {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2px;
+                                .timesTop {
+                                    font-size: 14px;
+                                    text-align: center;
+                                }
+                                .timesMid {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    .midCir {
+                                        width: 7px;
+                                        height: 7px;
+                                        border-radius: 50%;
+                                        &:nth-child(1) {
+                                            background: $secondWhite;
+                                            border: 1px solid $purple;
+                                        }
+                                        &:nth-child(3) {
+                                            background-color: $purple;
+                                            border: 1px solid $purple;
+                                        }
+                                    }
+                                    .midLine {
+                                        height: 1px;
+                                        width: 78px;
+                                        background-color: $purple;
+                                    }
+                                }
+                                .timesBot {
+                                    font-size: 10px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                        .cardWeight {
+                            .weightTop {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                            }
+                        }
+                        .cardPrice {
+                            display: flex;
+                            flex-direction: column;
+                            span:nth-child(1) {
+                                text-decoration: line-through;
+                                opacity: 0.5;
+                            }
+                        }
+                        .cardAction {
+                            display: flex;
+                            align-items: center;
+                            .btnChoose {
+                                padding: 10px;
+                                color: $orange;
+                                background-color: $secondOrange;
+                                border-radius: 12px;
+                                transition: 0.5s;
+                                cursor: pointer;
+                                &:hover {
+                                    letter-spacing: 1px;
+                                }
+                                &:active {
+                                    background-color: $orange;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        .cardTop {
+                            .cardAction {
+                                display: flex;
+                                align-items: center;
+                                .btnChoose {
+                                    padding: 10px;
+                                    color: $white;
+                                    background-color: $orange;
+                                    border-radius: 12px;
+                                }
+                            }
+                        }
+                    }
+                    input[type="radio"] {
+                        display: none;
+                    }
+                    #detail:checked ~ .btnLine {
+                        label:nth-child(1) {
+                            color: $purple;
+                            text-decoration: underline;
+                            opacity: 1;
+                        }
+                        label:nth-child(2) {
+                            color: $black;
+                            opacity: 0.5;
+                        }
+                    }
+                    #info:checked ~ .btnLine {
+                        label:nth-child(2) {
+                            color: $purple;
+                            text-decoration: underline;
+                            opacity: 1;
+                        }
+                        label:nth-child(1) {
+                            color: $black;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    #detail:checked ~ .cardBot {
+                        display: flex;
+                    }
+                    #detail:checked ~ .cardBotInfo {
+                        display: none;
+                    }
+
+                    #details:checked ~ .btnLine {
+                        label:nth-child(1) {
+                            color: $purple;
+                            text-decoration: underline;
+                            opacity: 1;
+                        }
+                        label:nth-child(2) {
+                            color: $black;
+                            opacity: 0.5;
+                        }
+                    }
+                    #infos:checked ~ .btnLine {
+                        label:nth-child(2) {
+                            color: $purple;
+                            text-decoration: underline;
+                            opacity: 1;
+                        }
+                        label:nth-child(1) {
+                            color: $black;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    #details:checked ~ .cardBot {
+                        display: flex;
+                    }
+                    #details:checked ~ .cardBotInfo {
+                        display: none;
+                    }
+                    .btnLine {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 20px;
+                        label {
+                            cursor: pointer;
+                            text-transform: uppercase;
+                            color: $black;
+                            font-size: 12px;
+                            margin-right: 20px;
+                        }
+                        .line {
+                            width: 75%;
+                            height: 1px;
+                            background-color: $black;
+                        }
+                        .btnLinein {
+                            .btnLineItem {
+                                margin-right: 30px;
+                                &.active {
+                                    text-decoration: underline;
+                                    color: $purple;
+                                }
+                            }
+                        }
+                    }
+                    .cardBot {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        display: none;
+                        .cardBotL {
+                            display: flex;
+                            gap: 30px;
+                            .botL {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                
+                            }
+                            .botM {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                .circleM {
+                                    width: 7px;
+                                    height: 7px;
+                                    border-radius: 50%;
+                                    background-color: $white;
+                                    border: 1px solid $purple;
+                                }
+                                .lineM {
+                                    width: 1px;
+                                    height: 136px;
+                                    background-color: $purple;
+                                }
+                                .circleM:nth-child(3) {
+                                    width: 7px;
+                                    height: 7px;
+                                    border-radius: 50%;
+                                    background-color: $purple;
+                                }
+                            }
+                            .botR {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                            }
+                        }
+                        .cardBotR {
+                            .logoBoxs {
+                                display: flex;
+                                gap: 10px;
+                                margin-bottom: 10px;
+                                .logos {
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 6px;
+                                    padding: 3px;
+                                    border: 1px solid rgba(0, 0, 0, 0.1);
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                                .logosTitle {
+                                    font-size: 12px;
+                                }
+                            }
+                            .cardDetail {
+                                width: 100%;
+                                padding: 10px;
+                                border-radius: 12px;
+                                gap: 50px;
+                                display: flex;
+                                padding-right: 50px;
+                                background-color: $secondWhite;
+                            }
+                        }
+                    }
+                    .cardBotInfo {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-right: 50px;
+                        flex-wrap: wrap;
+                        gap: 30px;
+                        .cardBotL {
+                            h4 {
+                                text-transform: uppercase;
+                            }
+                            .logoBoxs {
+                                display: flex;
+                                gap: 10px;
+                                margin-bottom: 10px;
+                                margin-top: 20px;
+                                .logos {
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 6px;
+                                    padding: 3px;
+                                    border: 1px solid rgba(0, 0, 0, 0.1);
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                                .logosTitle {
+                                    font-size: 12px;
+                                }
+                            }
+                            .cardInfoLocateBox {
+                                display: flex;
+                                gap: 5px;
+                                .locateFr {
+                                    display: flex;
+                                    flex-direction: column;
+                                    span:nth-child(2) {
+                                        font-size: 12px;
+                                    }
+                                }
+                                .locateLine {
+                                    display: flex;
+                                    align-items: center;
+                                    .locateCir {
+                                        width: 7px;
+                                        height: 7px;
+                                        border-radius: 50%;
+                                        border: 1px solid $purple;
+                                        margin-top: -15px;
+                                        &:nth-child(3) {
+                                            background-color: $purple;
+                                        }
+                                    }
+                                    .locateLine {
+                                        width: 50px;
+                                        height: 1px;
+                                        background-color: $purple;
+                                        margin-top: -15px;
+                                    }
+                                }
+                            }
+                        }
+                        .cardBotR {
+                            h4 {
+                                text-transform: uppercase;
+                            }
+                            .cardBotDetail {
+                                margin-top: 20px;
+                                display: flex;
+                                gap: 100px;
+                                .cardBotDetailL,
+                                .cardBotDetailR {
+                                    margin-bottom: 10px;
+                                }
+                            }
+                            .cardBotDetailTotal {
+                                margin-top: 10px;
+                                display: flex;
+                                justify-content: space-between;
+                                gap: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainR {
+            .mainRItem {
+                background-color: $white;
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                .mainRtitle {
+                    text-transform: uppercase;
+                }
+            }
+            .mainRItemM {
+                width: 100%;
+                background-color: $white;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                .ItemTop {
+                    width: 100%;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    span {
+                        height: 30px;
+                        width: 30px;
+                        @include flexAlign();
+                        padding: 5px;
+                        border-radius: 50%;
+                        background-color: $gray;
+                        color: $white;
+                        font-size: 14px;
+                    }
+                }
+                .cardBrands {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    .ItemInfo {
+                        p {
+                            text-decoration: underline;
+                        }
+                    }
+                    .logobrand {
+                        margin-right: 10px;
+                        height: 30px;
+                        width: 30px;
+                        padding: 3px;
+                        border-radius: 6px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .names {
+                        text-transform: uppercase;
+                        font-size: 14px;
+                    }
+                }
+                .cardTime {
+                    display: flex;
+                    gap: 10px;
+                    .times {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        span {
+                            font-size: 14px;
+                        }
+                        .timesUnder {
+                            font-size: 10px;
+                            background-color: $secondWhite;
+                            border-radius: 100px;
+                            padding: 5px;
+                            @include flexAlign();
+                        }
+                    }
+                    .timesAbout {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: 2px;
+                        .timesTop {
+                            font-size: 14px;
+                            text-align: center;
+                        }
+                        .timesMid {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .midCir {
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                &:nth-child(1) {
+                                    background: $secondWhite;
+                                    border: 1px solid $purple;
+                                }
+                                &:nth-child(3) {
+                                    background-color: $purple;
+                                    border: 1px solid $purple;
+                                }
+                            }
+                            .midLine {
+                                height: 1px;
+                                width: 100%;
+                                background-color: $purple;
+                            }
+                        }
+                        .timesBot {
+                            font-size: 10px;
+                            text-align: center;
+                        }
+                    }
+                }
+                .changeDepart {
+                    width: 100%;
+                    padding: 10px;
+                    color: $purple;
+                    background-color: $secondWhite;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                }
+            }
+            .lineArt {
+                height: 1px;
+                width: 90%;
+                background-color: rgba(0, 0, 0, 0.1);
+                margin: auto;
+            }
+            .ItemBot {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 10px;
+                background-color: $white;
+
+                span {
+                    height: 30px;
+                    width: 30px;
+                    @include flexAlign();
+                    padding: 5px;
+                    border-radius: 50%;
+                    background-color: $purple;
+                    color: $white;
+                    font-size: 14px;
+                }
+            }
+            .mainRItemB {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                padding: 20px;
+                background-color: $whiteYe;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .navMenu {
+        display: none;
+    }
+    .navMenuicon {
+        display: block;
+        margin-left: auto;
+        font-size: 30px;
+    }
+    .hero {
+        height: 100vh;
+        img {
+            top: 0px;
+            position: absolute;
+            width: 100%;
+        }
+        .heroChild {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            .heroText {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                top: 20%;
+                left: 0;
+                span {
+                    font-size: 52px;
+                    margin-right: auto;
+                    strong {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+    }
+    .scheduleLocate {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 220px;
+        grid-template-areas:
+            "h1"
+            "h2";
+        grid-gap: 20px;
+    }
+
+    .btnChangeFlights {
+        border-radius: 50%;
+        span {
+            display: none;
+        }
+    }
+    .mainR {
+        margin-top: 20px;
+    }
+    .headerTwo {
+        display: none;
+    }
+    .scheduleLocate-item {
+        display: flex;
+        flex-wrap: wrap;
+        label {
+            width: 100% !important;
+            &:nth-child(3) {
+                margin-bottom: 10px;
+            }
+        }
+        .locateCircle {
+            visibility: hidden;
+        }
+        .listTP {
+            left: 0;
+            top: 100px;
+        }
+        .listTP2 {
+            right: 0;
+        }
+        .locateIn {
+            height: 100px;
+            border-radius: 12px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            &.hcm {
+                padding-left: 20px;
+                border: 2px solid $purple;
+            }
+        }
+    }
+    .contactCover {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px; 
+        .contactBox {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .contactLH {
+                display: flex;
+            }
+        }
+    }
+    .cardBot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: none;
+        .cardBotL {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+            margin-bottom: 30px;
+            .botL {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+            .botM {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .circleM {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    border: 1px solid $purple;
+                }
+                .lineM {
+                    width: 1px;
+                    height: 136px;
+                    background-color: $purple;
+                }
+                .circleM:nth-child(3) {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $purple;
+                }
+            }
+            .botR {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+        .cardBotR {
+            width: 100%;
+            .logoBoxs {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+                .logos {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 6px;
+                    padding: 3px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .logosTitle {
+                    font-size: 12px;
+                }
+            }
+            .cardDetail {
+                width: 100%;
+                padding: 10px;
+                border-radius: 12px;
+                gap: 50px;
+                display: flex;
+                padding-right: 50px;
+                background-color: $secondWhite;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    .navMenu {
+        display: none;
+    }
+    .navMenuicon {
+        display: block;
+        margin-left: auto;
+        font-size: 30px;
+    }
+    .hero {
+        height: 100vh;
+        img {
+            top: -150px;
+            position: absolute;
+            width: 100%;
+        }
+        .heroChild {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            .heroText {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                top: 20%;
+                left: 0;
+                span {
+                    font-size: 72px;
+                    margin-right: auto;
+                    strong {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+    }
+    
+    .scheduleLocate {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px;
+        grid-template-areas:
+            "h1"
+            "h2";
+        grid-gap: 20px;
+    }
+    .btnChangeFlights {
+        border-radius: 50%;
+        span {
+            display: none;
+        }
+    }
+    .mainR {
+        margin-top: 20px;
+    }
+    .headerTwo {
+        display: block;
+    }
+    .scheduleLocate-item {
+        display: flex;
+        flex-wrap: nowrap;
+        .locateCircle {
+            visibility: visible;
+        }
+        .listTP {
+            left: 0;
+        }
+        .listTP2 {
+            right: 0;
+        }
+        .locateIn {
+            height: 100px;
+            border-radius: 12px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            &.hcm {
+                padding-left: 35px;
+                border: 2px solid $purple;
+            }
+        }
+    }
+    .contactCover {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        .contactBox {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+    .cardBot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: none;
+        .cardBotL {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+            margin-bottom: 30px;
+            .botL {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+            .botM {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .circleM {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    border: 1px solid $purple;
+                }
+                .lineM {
+                    width: 1px;
+                    height: 136px;
+                    background-color: $purple;
+                }
+                .circleM:nth-child(3) {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $purple;
+                }
+            }
+            .botR {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+        .cardBotR {
+            width: 100%;
+            .logoBoxs {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+                .logos {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 6px;
+                    padding: 3px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .logosTitle {
+                    font-size: 12px;
+                }
+            }
+            .cardDetail {
+                width: 100%;
+                padding: 10px;
+                border-radius: 12px;
+                gap: 50px;
+                display: flex;
+                padding-right: 50px;
+                background-color: $secondWhite;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .navMenu {
+        display: block;
+    }
+    .navMenuicon {
+        display: none;
+    }
+    .menuRes {
+        display: none;
+    }
+    .hero {
+        width: 100%;
+        height: calc(982px);
+        overflow: hidden;
+        img {
+            top: -650px;
+            position: absolute;
+            width: 100%;
+        }
+    }
+    .scheduleLocate {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px;
+        grid-template-areas: "h1 h2";
+        grid-gap: 20px;
+    }
+    .btnChangeFlights {
+        border-radius: 12px;
+        span {
+            display: block;
+        }
+    }
+    .mainIn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas: "h1 h2";
+        grid-gap: 10px;
+    }
+    .mainR {
+        margin-top: 10px;
+    }
+    .headerTwo {
+        display: block;
+    }
+    .scheduleLocate-item {
+        display: flex;
+        flex-wrap: nowrap;
+        .locateCircle {
+            visibility: visible;
+        }
+        .listTP {
+            left: 0;
+        }
+        .listTP2 {
+            right: 0;
+        }
+        .locateIn {
+            height: 100px;
+            border-radius: 12px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            &.hcm {
+                padding-left: 35px;
+                border: 2px solid $purple;
+            }
+        }
+    }
+    .contactCover {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        .contactBox {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+    .cardBot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: none;
+        .cardBotL {
+            display: flex;
+            justify-content: start;
+            width: calc(50% - 30px);
+            gap: 30px;
+            margin-bottom: 30px;
+            .botL {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+            .botM {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .circleM {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    border: 1px solid $purple;
+                }
+                .lineM {
+                    width: 1px;
+                    height: 136px;
+                    background-color: $purple;
+                }
+                .circleM:nth-child(3) {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $purple;
+                }
+            }
+            .botR {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+        .cardBotR {
+            width: calc(50% - 30px);
+            .logoBoxs {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+                .logos {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 6px;
+                    padding: 3px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .logosTitle {
+                    font-size: 12px;
+                }
+            }
+            .cardDetail {
+                width: 100%;
+                padding: 10px;
+                border-radius: 12px;
+                gap: 50px;
+                display: flex;
+                padding-right: 50px;
+                background-color: $secondWhite;
+            }
+        }
+    }
+}

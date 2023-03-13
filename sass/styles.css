@@ -1,0 +1,2691 @@
+@font-face {
+  font-family: biennaleBolder;
+  src: url(../font/BiennaleBlack.otf);
+}
+
+@font-face {
+  font-family: biennaleMiddle;
+  src: url(../font/BiennaleRegular.otf);
+}
+
+@font-face {
+  font-family: biennale;
+  src: url(../font/BiennaleBook.otf);
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.dropdown select {
+  width: 100%;
+  margin: 0;
+  background: none;
+  border: 1px solid transparent;
+  outline: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  font-size: 14px;
+  padding: 5px 5px;
+  font-family: biennaleMiddle;
+}
+
+.dropdown select,
+label {
+  font-family: biennaleMiddle;
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 8px;
+  top: 50%;
+  right: 1em;
+  margin-top: -4px;
+  z-index: 2;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(77,70,250)' points='8,12 0,0 16,0'/%3E%3C/svg%3E") 0 0 no-repeat;
+  /* These hacks make the select behind the arrow clickable in some browsers */
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: biennaleBolder;
+  src: url(../font/BiennaleBlack.otf);
+}
+
+@font-face {
+  font-family: biennaleMiddle;
+  src: url(../font/BiennaleRegular.otf);
+}
+
+@font-face {
+  font-family: biennale;
+  src: url(../font/BiennaleBook.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: biennale;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F4F2F9;
+  border-radius: 10px;
+  border: 2px solid #4d46fa;
+}
+
+.wide {
+  max-width: 1230px;
+  margin: auto;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.orange {
+  color: #F06336;
+}
+
+.purple {
+  color: #4d46fa !important;
+}
+
+.line {
+  opacity: 0.2;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 10;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-family: biennaleMiddle;
+}
+
+header.active {
+  background-color: #4d46fa;
+}
+
+header .headerIn {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  z-index: 2;
+}
+
+header .headerIn.active .logo h3 {
+  color: #FFFFFF;
+}
+
+header .headerIn.active nav ul li {
+  position: relative;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+header .headerIn.active nav ul li::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  padding: 10px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+}
+
+header .headerIn.active nav ul li:hover::after {
+  opacity: 1;
+}
+
+header .headerIn.active .navMenuicon {
+  color: #FFFFFF;
+}
+
+header .headerIn.active .btnBook {
+  background-color: #FFFFFF;
+  color: #4d46fa;
+}
+
+header .headerIn .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .headerIn .logo h3 {
+  margin-right: 10px;
+  font-family: biennaleMiddle;
+}
+
+header .headerIn .logo .icon {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  margin-right: 10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.9);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.9);
+}
+
+header .headerIn .logo .icon:nth-child(1) {
+  border: 2px solid #4d46fa;
+}
+
+header .headerIn .logo .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+header .headerIn nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .headerIn nav ul li {
+  list-style: none;
+  margin: 0 20px;
+  cursor: pointer;
+  font-family: biennaleMiddle;
+}
+
+header .headerIn .navMenuicon {
+  cursor: pointer;
+  font-size: 50px;
+  -webkit-transform: translateY(5px) translateX(-10px);
+          transform: translateY(5px) translateX(-10px);
+}
+
+header .headerIn .btnBook {
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #4d46fa;
+  color: #FFFFFF;
+  font-family: biennaleMiddle;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .headerIn .btnBook:hover {
+  background-color: #F06336;
+  color: #FFFFFF;
+}
+
+header .headerTwo {
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: biennaleBolder;
+  opacity: 0;
+}
+
+header .headerTwo .headerTwo-in {
+  height: 100%;
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox .subHeader-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox .subHeader-item .subName {
+  font-size: 16px;
+  color: #4d46fa;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox .subHeader-item .subDate {
+  font-size: 12px;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox .subHeader-fame {
+  margin: 0 30px;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .subheaderBox .subHeader-fame i {
+  font-size: 28px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .midItem {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .btnChangeFlights {
+  padding: 10px;
+  color: #FFFFFF;
+  background-color: #F06336;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .btnChangeFlights span {
+  margin-right: 10px;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .btnChangeFlights:hover {
+  background-color: #4d46fa;
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .btnChangeFlights:hover > i {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+header .headerTwo .headerTwo-in .subHeader-items .btnChangeFlights i {
+  font-size: 18px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .headerTwo.active {
+  background-color: #FFFFFF;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+header .menuRes {
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  position: fixed;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  z-index: 10;
+}
+
+header .menuRes .menuResin {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #FFFFFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+}
+
+header .menuRes .menuResin ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+header .menuRes .menuResin ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 25px;
+}
+
+header .menuRes .menuResin ul li:hover::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+header .menuRes .menuResin ul li:hover {
+  letter-spacing: 2px;
+}
+
+header .menuRes .menuResin .changeF {
+  padding: 10px 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #F06336;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .menuRes .menuResin .changeF span {
+  margin-right: 10px;
+}
+
+header .menuRes .menuResin .changeF:hover {
+  opacity: 0.8;
+}
+
+header .menuRes .menuResin .btnX {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4d46fa;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+header .menuRes .menuResin .btnX i {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+header .menuRes .menuResin .btnX:hover > i {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .menuRes.active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  height: calc(982px);
+  overflow: hidden;
+}
+
+.hero img {
+  top: -650px;
+  position: absolute;
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.hero .heroChild {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .heroChild .heroText {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  left: 0;
+}
+
+.hero .heroChild .heroText span {
+  font-size: 72px;
+  margin-right: auto;
+}
+
+.hero .heroChild .heroText span strong {
+  color: #4d46fa;
+}
+
+.schedules .scheduleCover {
+  width: 100%;
+  position: relative;
+}
+
+.schedules .scheduleCover .schedule {
+  position: absolute;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  bottom: -60px;
+  padding: 35px 20px;
+  -webkit-box-shadow: 0px 0px 30px rgba(77, 70, 250, 0.1), 0px 0px 5px rgba(77, 70, 250, 0.1);
+          box-shadow: 0px 0px 30px rgba(77, 70, 250, 0.1), 0px 0px 5px rgba(77, 70, 250, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 5;
+}
+
+.schedules .scheduleCover .schedule .btnSearch {
+  padding: 12px 20px;
+  width: 245px;
+  color: #FFFFFF;
+  font-size: 18px;
+  background-color: #4d46fa;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  z-index: 6;
+  right: 20px;
+  bottom: -25px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.schedules .scheduleCover .schedule .btnSearch img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  right: 20px;
+}
+
+.schedules .scheduleCover .schedule .btnSearch:hover {
+  background-color: #F06336;
+}
+
+.schedules .scheduleCover .schedule .btnSearch:hover > img {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
+
+.schedules .scheduleCover .schedule input[type="radio"] {
+  display: none;
+}
+
+.schedules .scheduleCover .schedule #oneway:checked ~ .schedulePicker label .oneway {
+  background-color: #4d46fa;
+}
+
+.schedules .scheduleCover .schedule #oneway:checked ~ .schedulePicker label .oneway .circleIn {
+  background-color: #F4F2F9;
+}
+
+.schedules .scheduleCover .schedule #multy :checked ~ .scheduleLocate .return {
+  display: none;
+}
+
+.schedules .scheduleCover .schedule #multy:checked ~ .schedulePicker label .multy {
+  background-color: #4d46fa;
+}
+
+.schedules .scheduleCover .schedule #multy:checked ~ .schedulePicker label .multy .circleIn {
+  background-color: #F4F2F9;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker label .scheduleCircle {
+  margin-right: 5px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #F4F2F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker label .scheduleCircle .circleIn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker label span {
+  margin-right: 30px;
+}
+
+.schedules .scheduleCover .schedule .schedulePicker select {
+  margin-right: 30px;
+  border: none;
+  outline: none;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item {
+  position: relative;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2 {
+  position: absolute;
+  z-index: 7;
+  width: calc(50% - 10px);
+  bottom: -300px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  visibility: hidden;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP span,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2 span {
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP span:hover,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2 span:hover {
+  background-color: #4d46fa;
+  color: #FFFFFF;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP span h4,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2 span h4 {
+  font-size: 14px;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP span p,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2 span p {
+  font-size: 12px;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP.active,
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .listTP2.active {
+  visibility: visible;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText {
+  cursor: pointer;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText:nth-child(1) {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText:nth-child(2) {
+  font-size: 24px;
+  color: #4d46fa;
+  font-family: biennaleBolder;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText:nth-child(3) {
+  font-size: 14px;
+  color: #000000;
+  font-family: biennaleBolder;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText h4 {
+  font-size: 24px;
+  color: #4d46fa;
+  font-family: biennaleBolder;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item .locateText p {
+  font-size: 14px;
+  font-family: biennaleBolder;
+  color: #000000;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FFFFFF;
+  position: absolute;
+  cursor: pointer;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle .locateCircleInside {
+  padding: 2px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: -5px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle .locateCircleInside .cirBack {
+  position: absolute;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle .locateCircleInside .cirBack:nth-child(1) {
+  width: 50%;
+  height: 100%;
+  left: -11px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle .locateCircleInside .cirBack:nth-child(2) {
+  width: 50%;
+  height: 100%;
+  background-color: #4d46fa;
+  right: -9px;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(1) .locateCircle .locateCircleInside .loCirIn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 5;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  grid-area: h2;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .datepicker {
+  border: none;
+  outline: none;
+  font-size: 24px;
+  color: #4d46fa;
+  font-family: biennaleBolder;
+  padding-right: 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .datepicker::-webkit-calendar-picker-indicator {
+  position: absolute;
+  background-image: url(../img/icon/calendar-31.svg);
+  height: 14px;
+  width: 14px;
+  right: 20%;
+  top: 27%;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .calendarBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .calendarBtn span {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #000000;
+  text-transform: none;
+  font-family: biennaleBolder;
+  opacity: 0.4;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .calendarBtn span:hover {
+  opacity: 1;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+}
+
+.schedules .scheduleCover .schedule .scheduleLocate .scheduleLocate-item:nth-child(2) .calendarL .calendarBtn span.active {
+  opacity: 1;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+}
+
+.contact {
+  margin-top: 30px;
+  height: 200px;
+  position: relative;
+  background-color: #F4F2F9;
+}
+
+.contact.active {
+  margin-top: 0;
+}
+
+.contact .contactCover .contactBox i {
+  height: 18px;
+  width: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 11px;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background-color: #4d46fa;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.contact .contactCover .contactBox span {
+  margin-right: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.contact .contactCover .contactBox span a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.contact .contactCover .contactBox .contactLine {
+  height: 1px;
+  background-color: #000000;
+  width: 40px;
+}
+
+.main {
+  width: 100%;
+  background-color: #F4F2F9;
+  padding-top: 160px;
+}
+
+.main .mainIn .mainL .mainFilter {
+  width: 100%;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.main .mainIn .mainL .mainFilter .filterTitle {
+  color: #000000;
+  opacity: 0.5;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+.main .mainIn .mainL .mainFilter .dropdown {
+  width: 120px;
+  padding: 7px 10px;
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+
+.main .mainIn .mainL .mainCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(3) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(4) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(5) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(6) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(7) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(8) {
+  padding-bottom: 0;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardBrand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardBrand .logos {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardBrand .logos img {
+  width: 100%;
+  height: auto;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardBrand .names {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .times {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .times h4 {
+  font-size: 14px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .times .timesUnder {
+  font-size: 10px;
+  background-color: #F4F2F9;
+  border-radius: 100px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesTop {
+  font-size: 14px;
+  text-align: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesMid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesMid .midCir {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesMid .midCir:nth-child(1) {
+  background: #F4F2F9;
+  border: 1px solid #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesMid .midCir:nth-child(3) {
+  background-color: #4d46fa;
+  border: 1px solid #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesMid .midLine {
+  height: 1px;
+  width: 78px;
+  background-color: #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardTime .timesAbout .timesBot {
+  font-size: 10px;
+  text-align: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardWeight .weightTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardPrice span:nth-child(1) {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction .btnChoose {
+  padding: 10px;
+  color: #F06336;
+  background-color: rgba(240, 102, 56, 0.1);
+  border-radius: 12px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction .btnChoose:hover {
+  letter-spacing: 1px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction .btnChoose:active {
+  background-color: #F06336;
+  color: #FFFFFF;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(2) .cardTop .cardAction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem:nth-child(2) .cardTop .cardAction .btnChoose {
+  padding: 10px;
+  color: #FFFFFF;
+  background-color: #F06336;
+  border-radius: 12px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem input[type="radio"] {
+  display: none;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #detail:checked ~ .btnLine label:nth-child(1) {
+  color: #4d46fa;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #detail:checked ~ .btnLine label:nth-child(2) {
+  color: #000000;
+  opacity: 0.5;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #info:checked ~ .btnLine label:nth-child(2) {
+  color: #4d46fa;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #info:checked ~ .btnLine label:nth-child(1) {
+  color: #000000;
+  opacity: 0.5;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #detail:checked ~ .cardBot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #detail:checked ~ .cardBotInfo {
+  display: none;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #details:checked ~ .btnLine label:nth-child(1) {
+  color: #4d46fa;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #details:checked ~ .btnLine label:nth-child(2) {
+  color: #000000;
+  opacity: 0.5;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #infos:checked ~ .btnLine label:nth-child(2) {
+  color: #4d46fa;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #infos:checked ~ .btnLine label:nth-child(1) {
+  color: #000000;
+  opacity: 0.5;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #details:checked ~ .cardBot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .mainIn .mainL .mainCard .cardItem #details:checked ~ .cardBotInfo {
+  display: none;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .btnLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .btnLine label {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .btnLine .line {
+  width: 75%;
+  height: 1px;
+  background-color: #000000;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .btnLine .btnLinein .btnLineItem {
+  margin-right: 30px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .btnLine .btnLinein .btnLineItem.active {
+  text-decoration: underline;
+  color: #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: none;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botM .circleM {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botM .lineM {
+  width: 1px;
+  height: 136px;
+  background-color: #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botM .circleM:nth-child(3) {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotL .botR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotR .logoBoxs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotR .logoBoxs .logos {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotR .logoBoxs .logos img {
+  width: 100%;
+  height: auto;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotR .logoBoxs .logosTitle {
+  font-size: 12px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBot .cardBotR .cardDetail {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  gap: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 50px;
+  background-color: #F4F2F9;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL h4 {
+  text-transform: uppercase;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .logoBoxs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .logoBoxs .logos {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .logoBoxs .logos img {
+  width: 100%;
+  height: auto;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .logoBoxs .logosTitle {
+  font-size: 12px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateFr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateFr span:nth-child(2) {
+  font-size: 12px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateLine .locateCir {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid #4d46fa;
+  margin-top: -15px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateLine .locateCir:nth-child(3) {
+  background-color: #4d46fa;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotL .cardInfoLocateBox .locateLine .locateLine {
+  width: 50px;
+  height: 1px;
+  background-color: #4d46fa;
+  margin-top: -15px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotR h4 {
+  text-transform: uppercase;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotR .cardBotDetail {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotR .cardBotDetail .cardBotDetailL,
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotR .cardBotDetail .cardBotDetailR {
+  margin-bottom: 10px;
+}
+
+.main .mainIn .mainL .mainCard .cardItem .cardBotInfo .cardBotR .cardBotDetailTotal {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 100px;
+}
+
+.main .mainIn .mainR .mainRItem {
+  background-color: #FFFFFF;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.main .mainIn .mainR .mainRItem .mainRtitle {
+  text-transform: uppercase;
+}
+
+.main .mainIn .mainR .mainRItemM {
+  width: 100%;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.main .mainIn .mainR .mainRItemM .ItemTop {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .mainIn .mainR .mainRItemM .ItemTop span {
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #979797;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardBrands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main .mainIn .mainR .mainRItemM .cardBrands .ItemInfo p {
+  text-decoration: underline;
+}
+
+.main .mainIn .mainR .mainRItemM .cardBrands .logobrand {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main .mainIn .mainR .mainRItemM .cardBrands .logobrand img {
+  width: 100%;
+  height: auto;
+}
+
+.main .mainIn .mainR .mainRItemM .cardBrands .names {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .times {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .times span {
+  font-size: 14px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .times .timesUnder {
+  font-size: 10px;
+  background-color: #F4F2F9;
+  border-radius: 100px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 2px;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesTop {
+  font-size: 14px;
+  text-align: center;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesMid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesMid .midCir {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesMid .midCir:nth-child(1) {
+  background: #F4F2F9;
+  border: 1px solid #4d46fa;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesMid .midCir:nth-child(3) {
+  background-color: #4d46fa;
+  border: 1px solid #4d46fa;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesMid .midLine {
+  height: 1px;
+  width: 100%;
+  background-color: #4d46fa;
+}
+
+.main .mainIn .mainR .mainRItemM .cardTime .timesAbout .timesBot {
+  font-size: 10px;
+  text-align: center;
+}
+
+.main .mainIn .mainR .mainRItemM .changeDepart {
+  width: 100%;
+  padding: 10px;
+  color: #4d46fa;
+  background-color: #F4F2F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 12px;
+}
+
+.main .mainIn .mainR .lineArt {
+  height: 1px;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.main .mainIn .mainR .ItemBot {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+.main .mainIn .mainR .ItemBot span {
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #4d46fa;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.main .mainIn .mainR .mainRItemB {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 20px;
+  background-color: #F8F8F8;
+}
+
+@media only screen and (min-width: 320px) {
+  .navMenu {
+    display: none;
+  }
+  .navMenuicon {
+    display: block;
+    margin-left: auto;
+    font-size: 30px;
+  }
+  .hero {
+    height: 100vh;
+  }
+  .hero img {
+    top: 0px;
+    position: absolute;
+    width: 100%;
+  }
+  .hero .heroChild {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero .heroChild .heroText {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    top: 20%;
+    left: 0;
+  }
+  .hero .heroChild .heroText span {
+    font-size: 52px;
+    margin-right: auto;
+  }
+  .hero .heroChild .heroText span strong {
+    color: #4d46fa;
+  }
+  .scheduleLocate {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 220px;
+        grid-template-rows: 220px;
+        grid-template-areas: "h1" "h2";
+    grid-gap: 20px;
+  }
+  .btnChangeFlights {
+    border-radius: 50%;
+  }
+  .btnChangeFlights span {
+    display: none;
+  }
+  .mainR {
+    margin-top: 20px;
+  }
+  .headerTwo {
+    display: none;
+  }
+  .scheduleLocate-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .scheduleLocate-item label {
+    width: 100% !important;
+  }
+  .scheduleLocate-item label:nth-child(3) {
+    margin-bottom: 10px;
+  }
+  .scheduleLocate-item .locateCircle {
+    visibility: hidden;
+  }
+  .scheduleLocate-item .listTP {
+    left: 0;
+    top: 100px;
+  }
+  .scheduleLocate-item .listTP2 {
+    right: 0;
+  }
+  .scheduleLocate-item .locateIn {
+    height: 100px;
+    border-radius: 12px;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  .scheduleLocate-item .locateIn.hcm {
+    padding-left: 20px;
+    border: 2px solid #4d46fa;
+  }
+  .contactCover {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .contactCover .contactBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contactCover .contactBox .contactLH {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cardBot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: none;
+  }
+  .cardBot .cardBotL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .cardBot .cardBotL .botL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotL .botM {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cardBot .cardBotL .botM .circleM {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #4d46fa;
+  }
+  .cardBot .cardBotL .botM .lineM {
+    width: 1px;
+    height: 136px;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botM .circleM:nth-child(3) {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botR {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotR {
+    width: 100%;
+  }
+  .cardBot .cardBotR .logoBoxs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .cardBot .cardBotR .logoBoxs .logos {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cardBot .cardBotR .logoBoxs .logos img {
+    width: 100%;
+    height: auto;
+  }
+  .cardBot .cardBotR .logoBoxs .logosTitle {
+    font-size: 12px;
+  }
+  .cardBot .cardBotR .cardDetail {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 50px;
+    background-color: #F4F2F9;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navMenu {
+    display: none;
+  }
+  .navMenuicon {
+    display: block;
+    margin-left: auto;
+    font-size: 30px;
+  }
+  .hero {
+    height: 100vh;
+  }
+  .hero img {
+    top: -150px;
+    position: absolute;
+    width: 100%;
+  }
+  .hero .heroChild {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero .heroChild .heroText {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    top: 20%;
+    left: 0;
+  }
+  .hero .heroChild .heroText span {
+    font-size: 72px;
+    margin-right: auto;
+  }
+  .hero .heroChild .heroText span strong {
+    color: #4d46fa;
+  }
+  .scheduleLocate {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 100px;
+        grid-template-rows: 100px;
+        grid-template-areas: "h1" "h2";
+    grid-gap: 20px;
+  }
+  .btnChangeFlights {
+    border-radius: 50%;
+  }
+  .btnChangeFlights span {
+    display: none;
+  }
+  .mainR {
+    margin-top: 20px;
+  }
+  .headerTwo {
+    display: block;
+  }
+  .scheduleLocate-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .scheduleLocate-item .locateCircle {
+    visibility: visible;
+  }
+  .scheduleLocate-item .listTP {
+    left: 0;
+  }
+  .scheduleLocate-item .listTP2 {
+    right: 0;
+  }
+  .scheduleLocate-item .locateIn {
+    height: 100px;
+    border-radius: 12px;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  .scheduleLocate-item .locateIn.hcm {
+    padding-left: 35px;
+    border: 2px solid #4d46fa;
+  }
+  .contactCover {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 20px;
+  }
+  .contactCover .contactBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cardBot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: none;
+  }
+  .cardBot .cardBotL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .cardBot .cardBotL .botL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotL .botM {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cardBot .cardBotL .botM .circleM {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #4d46fa;
+  }
+  .cardBot .cardBotL .botM .lineM {
+    width: 1px;
+    height: 136px;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botM .circleM:nth-child(3) {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botR {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotR {
+    width: 100%;
+  }
+  .cardBot .cardBotR .logoBoxs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .cardBot .cardBotR .logoBoxs .logos {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cardBot .cardBotR .logoBoxs .logos img {
+    width: 100%;
+    height: auto;
+  }
+  .cardBot .cardBotR .logoBoxs .logosTitle {
+    font-size: 12px;
+  }
+  .cardBot .cardBotR .cardDetail {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 50px;
+    background-color: #F4F2F9;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navMenu {
+    display: block;
+  }
+  .navMenuicon {
+    display: none;
+  }
+  .menuRes {
+    display: none;
+  }
+  .hero {
+    width: 100%;
+    height: calc(982px);
+    overflow: hidden;
+  }
+  .hero img {
+    top: -650px;
+    position: absolute;
+    width: 100%;
+  }
+  .scheduleLocate {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 100px;
+        grid-template-rows: 100px;
+        grid-template-areas: "h1 h2";
+    grid-gap: 20px;
+  }
+  .btnChangeFlights {
+    border-radius: 12px;
+  }
+  .btnChangeFlights span {
+    display: block;
+  }
+  .mainIn {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "h1 h2";
+    grid-gap: 10px;
+  }
+  .mainR {
+    margin-top: 10px;
+  }
+  .headerTwo {
+    display: block;
+  }
+  .scheduleLocate-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .scheduleLocate-item .locateCircle {
+    visibility: visible;
+  }
+  .scheduleLocate-item .listTP {
+    left: 0;
+  }
+  .scheduleLocate-item .listTP2 {
+    right: 0;
+  }
+  .scheduleLocate-item .locateIn {
+    height: 100px;
+    border-radius: 12px;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  .scheduleLocate-item .locateIn.hcm {
+    padding-left: 35px;
+    border: 2px solid #4d46fa;
+  }
+  .contactCover {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 20px;
+  }
+  .contactCover .contactBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cardBot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: none;
+  }
+  .cardBot .cardBotL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    width: calc(50% - 30px);
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .cardBot .cardBotL .botL {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotL .botM {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cardBot .cardBotL .botM .circleM {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #4d46fa;
+  }
+  .cardBot .cardBotL .botM .lineM {
+    width: 1px;
+    height: 136px;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botM .circleM:nth-child(3) {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4d46fa;
+  }
+  .cardBot .cardBotL .botR {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cardBot .cardBotR {
+    width: calc(50% - 30px);
+  }
+  .cardBot .cardBotR .logoBoxs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .cardBot .cardBotR .logoBoxs .logos {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cardBot .cardBotR .logoBoxs .logos img {
+    width: 100%;
+    height: auto;
+  }
+  .cardBot .cardBotR .logoBoxs .logosTitle {
+    font-size: 12px;
+  }
+  .cardBot .cardBotR .cardDetail {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 50px;
+    background-color: #F4F2F9;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
