@@ -849,9 +849,6 @@ section {
                                 border-radius: 12px;
                                 transition: 0.5s;
                                 cursor: pointer;
-                                &:hover {
-                                    letter-spacing: 1px;
-                                }
                                 &:active {
                                     background-color: $orange;
                                     color: $white;

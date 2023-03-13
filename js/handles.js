@@ -1,18 +1,10 @@
 const header = document.querySelector('header')
 const headerTwo = document.querySelector('.headerTwo')
 const headerIn = document.querySelector('.headerIn')
+const getVNLanguage = document.getElementById('vn-language')
+const getENLanguage = document.getElementById('en-language')
+const checkLanguage = localStorage.getItem('language_active')
 
-
-window.addEventListener('scroll', () => {
-    if (scrollY > 10) {
-        headerIn.classList.add('active')
-        header.classList.add('active')
-    } else {
-        headerIn.classList.remove('active')
-        header.classList.remove('active')
-    }
-})
-//
 const DN = document.querySelector('#DN')
 const HCM = document.querySelector('#HCM')
 const listTP = document.querySelector('.listTP')
@@ -23,6 +15,25 @@ const HCMtxt = document.querySelector('.HCM');
 
 const listtpItem = document.querySelectorAll('.listTP span')
 const listtp2Item = document.querySelectorAll('.listTP2 span')
+
+const listFlight = [
+    { id: 0, name: 'DN-HCM', from: '18:00', to: '19:30', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+    { id: 1, name: 'DN-HCM', from: '18:30', to: '20:00', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+    { id: 2, name: 'DN-HCM', from: '19:00', to: '20:30', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+    { id: 3, name: 'DN-HCM', from: '20:00', to: '21:30', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+    { id: 4, name: 'DN-HCM', from: '20:30', to: '22:00', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+    { id: 5, name: 'DN-HCM', from: '21:00', to: '22:30', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
+]
+
+window.addEventListener('scroll', () => {
+    if (scrollY > 10) {
+        headerIn.classList.add('active')
+        header.classList.add('active')
+    } else {
+        headerIn.classList.remove('active')
+        header.classList.remove('active')
+    }
+})
 
 listtpItem.forEach(function (e) {
     e.addEventListener('click', () => {
@@ -38,6 +49,7 @@ listtp2Item.forEach(function (e) {
 window.onload = () => {
     HCMtxt.innerHTML = "<span><h4>Ho Chi Minh</h4><p>Viet Nam</p></span>"
     DNtxt.innerHTML = "<span><h4>Da Nang</h4><p>Quang Nam, Viet Nam</p></span>"
+    getVNLanguage.classList.add('active-language')
 }
 
 DN.addEventListener('click', () => {
@@ -60,9 +72,6 @@ function changeFlight() {
     ItemInfo.innerHTML = localStorage.setItem('infoFlight1', infoFly)
 
 }
-
-
-
 //
 const navMenuicon = document.querySelector('.navMenuicon')
 const btnX = document.querySelector('.btnX')
@@ -152,4 +161,14 @@ nextCars.addEventListener("click", function () {
     retur.setAttribute("value", yyyy + '-' + mm + '-' + (dd += 1))
 })
 
+getVNLanguage.addEventListener('click', () => {
+    getVNLanguage.classList.add('active-language')
+    getENLanguage.classList.remove('active-language')
+    localStorage.setItem('language_active', 'vn')
+})
+getENLanguage.addEventListener('click', () => {
+    getVNLanguage.classList.remove('active-language')
+    getENLanguage.classList.add('active-language')
+    localStorage.setItem('language_active', 'en')
+})
 
