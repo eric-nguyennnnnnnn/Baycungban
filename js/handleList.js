@@ -242,6 +242,11 @@ const detailFlight = `<input type="radio" name="cardBotinfo" id="details">
 
 window.onload = () => {
     renderList();
+    if (checkLanguage === 'vn') {
+        getVNLanguage.classList.add('active-language');
+    } else {
+        getENLanguage.classList.add('active-language');
+    }
     const getAllItem = document.querySelectorAll('.cardFlight-item')
     getAllItem[0].innerHTML += detailFlight;
     let currId = 0
