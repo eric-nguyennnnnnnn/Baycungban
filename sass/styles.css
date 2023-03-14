@@ -225,7 +225,7 @@ header .headerIn .logo .icon {
 }
 
 header .headerIn .logo .active-language {
-  outline: 6px solid #f1a170;
+  outline: 5px solid #4499cef1;
   border-radius: 50%;
 }
 
