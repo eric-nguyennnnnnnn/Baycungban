@@ -30,7 +30,7 @@ menuRes.addEventListener('click', () => {
 
 const renderList = () => {
     listFlight.forEach((item, index) => {
-        flightItem.innerHTML += `<div class="cardItem cardFlight-item ${idActive === item.id && 'active-cardItem'}" id=${item.id}>
+        flightItem.innerHTML += `<div class="cardItem cardFlight-item" id=${item.id}>
         <div class="cardTop">
             <div class="cardBrand">
                 <div class="logos"><img src="${item.provide === 'vietnam airlines' ? './img/icon/vietnamAir.png' : './img/icon/bamboo.png'}" alt=""></div>
@@ -79,7 +79,7 @@ const renderList = () => {
 
 const defaultItem = (id) => {
     const item = listFlight[id];
-    return `<div class="cardItem cardFlight-item ${idActive === item.id && 'active-cardItem'}" id=${item.id}>
+    return `
     <div class="cardTop">
         <div class="cardBrand">
             <div class="logos"><img src="${item.provide === 'vietnam airlines' ? './img/icon/vietnamAir.png' : './img/icon/bamboo.png'}" alt=""></div>
@@ -121,7 +121,6 @@ const defaultItem = (id) => {
         <div class="cardAction">
             <div class="btnChoose" id=${item.id}>Choose</div>
         </div>
-    </div>
 </div>`
 }
 const detailFlight = `<input type="radio" name="cardBotinfo" id="details">
@@ -246,14 +245,20 @@ window.onload = () => {
     const getAllItem = document.querySelectorAll('.cardFlight-item')
     getAllItem[0].innerHTML += detailFlight;
     let currId = 0
+    getAllItem[0].classList.add('active-cardItem')
     getAllItem.forEach((item, index) => {
         item.addEventListener('click', (e) => {
             if (e.target.outerText === "Choose") {
-                console.log(" 🚀- DaiNQ - 🚀: -> item.addEventListener -> item:", getAllItem[currId])
-                currId = item.attributes[1].nodeValue
-                // item.innerHTML += detailFlight;
-                // getAllItem[currId].removeChild()
+                getAllItem[currId].classList.remove('active-cardItem')
+                getAllItem[currId].childNodes.forEach((child, idx) => {
+                    if (idx !== 0) {
+                        child.remove()
+                    }
+                })
                 getAllItem[currId].innerHTML += defaultItem(currId);
+                item.classList.add('active-cardItem')
+                item.innerHTML += detailFlight;
+                currId = item.attributes[1].nodeValue
             }
         })
     })

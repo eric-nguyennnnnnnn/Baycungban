@@ -1133,30 +1133,6 @@ section {
   cursor: pointer;
 }
 
-.main .mainIn .mainL .mainCard .cardItem:nth-child(3) {
-  padding-bottom: 0;
-}
-
-.main .mainIn .mainL .mainCard .cardItem:nth-child(4) {
-  padding-bottom: 0;
-}
-
-.main .mainIn .mainL .mainCard .cardItem:nth-child(5) {
-  padding-bottom: 0;
-}
-
-.main .mainIn .mainL .mainCard .cardItem:nth-child(6) {
-  padding-bottom: 0;
-}
-
-.main .mainIn .mainL .mainCard .cardItem:nth-child(7) {
-  padding-bottom: 0;
-}
-
-.main .mainIn .mainL .mainCard .cardItem:nth-child(8) {
-  padding-bottom: 0;
-}
-
 .main .mainIn .mainL .mainCard .cardItem .cardTop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1166,7 +1142,8 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  width: 100%;
 }
 
 .main .mainIn .mainL .mainCard .cardItem .cardTop .cardBrand {
@@ -1355,7 +1332,6 @@ section {
 }
 
 .main .mainIn .mainL .mainCard .active-cardItem .cardTop .cardAction .btnChoose {
-  padding: 10px;
   color: #FFFFFF;
   background-color: #F06336;
   border-radius: 12px;
