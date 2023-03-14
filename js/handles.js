@@ -16,15 +16,6 @@ const HCMtxt = document.querySelector('.HCM');
 const listtpItem = document.querySelectorAll('.listTP span')
 const listtp2Item = document.querySelectorAll('.listTP2 span')
 
-const listFlight = [
-    { id: 0, name: 'DN-HCM', from: '18:00', to: '19:30', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-    { id: 1, name: 'DN-HCM', from: '18:30', to: '20:00', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-    { id: 2, name: 'DN-HCM', from: '19:00', to: '20:30', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-    { id: 3, name: 'DN-HCM', from: '20:00', to: '21:30', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-    { id: 4, name: 'DN-HCM', from: '20:30', to: '22:00', flight_time: '1h 30m', provide: 'bamboo airways', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-    { id: 5, name: 'DN-HCM', from: '21:00', to: '22:30', flight_time: '1h 30m', provide: 'vietnam airlines', price: '1,326,000 vnd', discount: '1,322,000 vnd' },
-]
-
 window.addEventListener('scroll', () => {
     if (scrollY > 10) {
         headerIn.classList.add('active')
@@ -49,7 +40,11 @@ listtp2Item.forEach(function (e) {
 window.onload = () => {
     HCMtxt.innerHTML = "<span><h4>Ho Chi Minh</h4><p>Viet Nam</p></span>"
     DNtxt.innerHTML = "<span><h4>Da Nang</h4><p>Quang Nam, Viet Nam</p></span>"
-    getVNLanguage.classList.add('active-language')
+    if (checkLanguage === 'vn') {
+        return getVNLanguage.classList.add('active-language');
+    } else {
+        return getENLanguage.classList.add('active-language');
+    }
 }
 
 DN.addEventListener('click', () => {

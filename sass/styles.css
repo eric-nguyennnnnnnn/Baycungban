@@ -225,7 +225,7 @@ header .headerIn .logo .icon {
 }
 
 header .headerIn .logo .active-language {
-  outline: 4px solid #4d46fa;
+  outline: 6px solid #f1a170;
   border-radius: 50%;
 }
 
@@ -1130,6 +1130,7 @@ section {
   padding: 20px;
   border-radius: 12px;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 
 .main .mainIn .mainL .mainCard .cardItem:nth-child(3) {
@@ -1339,12 +1340,12 @@ section {
   cursor: pointer;
 }
 
-.main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction .btnChoose:active {
+.main .mainIn .mainL .mainCard .active-cardItem > .main .mainIn .mainL .mainCard .cardItem .cardTop .cardAction .btnChoose {
   background-color: #F06336;
   color: #FFFFFF;
 }
 
-.main .mainIn .mainL .mainCard .cardItem:nth-child(2) .cardTop .cardAction {
+.main .mainIn .mainL .mainCard .active-cardItem .cardTop .cardAction {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1353,7 +1354,7 @@ section {
           align-items: center;
 }
 
-.main .mainIn .mainL .mainCard .cardItem:nth-child(2) .cardTop .cardAction .btnChoose {
+.main .mainIn .mainL .mainCard .active-cardItem .cardTop .cardAction .btnChoose {
   padding: 10px;
   color: #FFFFFF;
   background-color: #F06336;
